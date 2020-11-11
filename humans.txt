@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    <Hustin Kava> -- <Developer> -- <https://github.com/HustinKava>
+
+# THANKS
+
+    <name>
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, Javascript
+    jQuery, Modernizr, Normalize.css
