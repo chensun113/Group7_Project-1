@@ -6,3 +6,20 @@ We will design a search bar for the user input and also a drop down feature with
 
 Once the search has been made, we want a poster of the title to show, a trailer for the title. We want to be able to display facts about each title such as actors, release dates. A function where the user can save it to their liked titles that will display at the bottom of the page with some kind of dynamic interaction. 
 
+Features list:
+
+Header: 
+
+Title
+
+Body:
+
+Drop list with available countries
+Search bar for user input
+Instruction on how to use the search feature
+Random movie carrousel
+Film trivia 
+
+Footer:
+
+Icon links to the streaming platforms we will be accessing 
