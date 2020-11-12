@@ -4,6 +4,7 @@
 # TEAM
 
     <Hustin Kava> -- <Developer> -- <https://github.com/HustinKava>
+    <Hector Garcia Millares> -- <Developer> -- <https://github.com/hector-gm>
 
 # THANKS
 
