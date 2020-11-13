@@ -10,5 +10,5 @@ SO THAT I get search results and can acces them later.
 
 GIVEN that I rely on professional recommendations,
 I WANT to see reviews from the New York Times film critics
-SO THAT I can read trustworthy
+SO THAT I can find out if a review is a Critic's Pick or not
 
