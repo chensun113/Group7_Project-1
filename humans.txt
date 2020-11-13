@@ -11,7 +11,7 @@
 
 # THANKS
 
-    <name>
+    <name> Chen Sun(Rica) --<team member> --<https://github.com/UofT-Group7-Project-1/Group7_Project-1/tree/Sun>
 
 # TECHNOLOGY COLOPHON
 
