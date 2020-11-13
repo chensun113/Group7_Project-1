@@ -5,7 +5,7 @@
 
     <Hustin Kava> -- <Developer> -- <https://github.com/HustinKava>
     <Hector Garcia Millares> -- <Developer> -- <https://github.com/hector-gm>
-    <Chen Sun(Rica) -- <Developer> -- <https://github.com/UofT-Group7-Project-1/Group7_Project-1/tree/Sun>
+    <Chen Sun(Rica) -- <Developer> -- <https://github.com/chensun113>
 
 
 # THANKS
