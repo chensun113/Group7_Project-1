@@ -4,7 +4,11 @@
 # TEAM
 
     <Hustin Kava> -- <Developer> -- <https://github.com/HustinKava>
+
+    <Matthew Mckerroll> -- <Developer> -- <https://github.com/mattmckerroll>
+    
     <Hector Garcia Millares> -- <Developer> -- <https://github.com/hector-gm>
+
     <Chen Sun(Rica) -- <Developer> -- <https://github.com/chensun113>
 
 
