@@ -4,35 +4,44 @@ function search(movie) {
 var tmdbApi = 'a4e5136717cef17c7b2d9c9331196e91';
 var nytApi = 'dWR7musz8J5oEwVOdiYZeCsFGdcOnDDO';
 
-var askURL = 'https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=godfather&api-key=' + nytApi;
+var askURL = 'https://api.nytimes.com/svc/movies/v2/reviews/search.json?query='+moviePick+'&api-key=' + nytApi;
 var tmdbURL =  'https://api.themoviedb.org/3/search/movie?api_key='+tmdbApi+'&language=en-US&query='+movie+'&page=1&include_adult=false';
 
 
-
-
 $.ajax({
-    url: tmdbURL,
+    url: tmfbURL,
     method: 'GET'
 }).then(function (response) {
     console.log(response)
 
-})
-
-
-
-
-
-
-$.ajax({
-    url: askURL,
-    method: 'GET'
-}).then(function (response) {
-    console.log(response)
+//here is where the search results list is constructed. will need to loop through the based on the number of results
 
 })
-
 
 } //end of search function.
+
+
+
+$("#input").on("click", function(event){  //this is the event handler for the search button
+    event.preventDefault(); 
+    var searchQuery = this.text();
+
+    search(searchQuery); //calls the function that will call TMDB for the movie results list
+    
+
+})
+
+$("#searchList").on("click", ".btn", function(event){
+    event.preventDefault();
+    nytResults($(this).text());
+
+})
+
+function nytResults(movieName) {
+
+    //here all the info from the NYT is populated into the page.
+    
+}
 
 
 
