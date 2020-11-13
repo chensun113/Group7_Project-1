@@ -9,12 +9,7 @@
     
     <Hector Garcia Millares> -- <Developer> -- <https://github.com/hector-gm>
 
-<<<<<<< HEAD
-    <Chen Sun(Rica) -- <Developer> -- <https://github.com/chensun113>
-
-=======
     <Chen Sun(Rica)> -- <Developer> -- <https://github.com/chensun113>
->>>>>>> 2893704458def57c8eae5c657ae409288ff5221f
 
 # THANKS
 
