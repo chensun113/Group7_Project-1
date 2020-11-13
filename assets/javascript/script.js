@@ -9,7 +9,7 @@ var tmdbURL =  'https://api.themoviedb.org/3/search/movie?api_key='+tmdbApi+'&la
 
 
 $.ajax({
-    url: tmfbURL,
+    url: tmdbURL,
     method: 'GET'
 }).then(function (response) {
     console.log(response)
