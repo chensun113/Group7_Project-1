@@ -1,8 +1,8 @@
 # Group7_Project-1
 
-For group 7's project. We will be designing a website application that will allow users to search for any tv show or movie. We aim to use 3 API's. Netflix, Disney Plus (if available) and Amazon video. 
+For group 7's project. We will be designing a website application that will allow users to search for movie reviews from the New York Times and populating film trailers and details. We aim to use 2 API's: The Movie Database (TMDb) API and The New York Times Movie Reviews API. 
 
-We will design a search bar for the user input and also a drop down feature with a list of countries. We want the user to be able to provide what country they intend to use the streaming services from. 
+We will design a search bar for the user input, a results display section and a dynamic carrousel to show movie icon links.  
 
 Once the search has been made, we want a poster of the title to show, a trailer for the title. We want to be able to display facts about each title such as actors, release dates. A function where the user can save it to their liked titles that will display at the bottom of the page with some kind of dynamic interaction. 
 
@@ -14,12 +14,10 @@ Title
 
 Body:
 
-Drop list with available countries
 Search bar for user input
 Instruction on how to use the search feature
-Random movie carrousel
-Film trivia 
+Random critics' picks carrousel
 
 Footer:
 
-Icon links to the streaming platforms we will be accessing 
+Icon links to streaming services and the New York Times films section.
