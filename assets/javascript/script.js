@@ -13,8 +13,18 @@ $.ajax({
     method: 'GET'
 }).then(function (response) {
     console.log(response)
+    $('#resultsList').empty(); //clear the search results on search 
 
 //here is where the search results list is constructed. will need to loop through the based on the number of results
+
+
+//this loop will loop through all of the results given to us from TMDB api, each result's title is appendended to the list of search results
+for (let i = 0; i < response.results.length; i++) {
+    movieTitle = response.results[i].title;
+    resultDiv = $("<button class='button is-ghost'>").text(movieTitle)
+    $('#searchResults').append(resultDiv);                  // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<----  need to add an empty <div> right under the search bar in the HTML file
+
+}
 
 })
 
