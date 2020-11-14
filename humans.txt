@@ -9,6 +9,8 @@
     
     <Hector Garcia Millares> -- <Developer> -- <https://github.com/hector-gm>
 
+    <Chen Sun(Rica)> -- <Developer> -- <https://github.com/chensun113>
+
 # THANKS
 
     <name>
