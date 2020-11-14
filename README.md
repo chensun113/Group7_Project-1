@@ -4,20 +4,15 @@ For group 7's project. We will be designing a website application that will allo
 
 We will design a search bar for the user input, a results display section and a dynamic carrousel to show movie icon links.  
 
-Once the search has been made, we want a poster of the title to show, a trailer for the title. We want to be able to display facts about each title such as actors, release dates. A function where the user can save it to their liked titles that will display at the bottom of the page with some kind of dynamic interaction. 
+Once the search has been made, we want a poster of the title to show, a trailer for the title. We want to be able to display facts about each title such as actors, release dates. The page has a function where the user's recent searches will display below the search field. 
 
-Features list:
+## Features list:
 
-Header: 
+* Responsive website with mobile-first design.
+* API calls to New York Times Movie Reviews and The Movide Database
+* Dynamic carrousel to show critics' picks 
+* Recent searches commited to local storage displayed for quick access
 
-Title
-
-Body:
-
-Search bar for user input
-Instruction on how to use the search feature
-Random critics' picks carrousel
-
-Footer:
-
-Icon links to streaming services and the New York Times films section.
+## Project Wireframes
+![Project Homepage](/assets/images/New%20Wireframe%20homepage.png)
+![Project Results Page](/assets/images/New%20Wireframe%20results.png)
