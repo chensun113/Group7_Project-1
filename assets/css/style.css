@@ -12,7 +12,7 @@
    ========================================================================== */
 
    html {
-    color: #222;
+    Background-color: #0000;
     font-size: 1em;
     line-height: 1.4;
   }
@@ -27,15 +27,10 @@
    * Customize the background color to match your design.
    */
   
-  ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-  }
   
-  ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-  }
+ 
+  
+  
   
   /*
    * A better looking default horizontal rule
@@ -69,11 +64,7 @@
    * Remove default fieldset styles.
    */
   
-  fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-  }
+  
   
   /*
    * Allow only vertical resizing of textareas.
@@ -113,19 +104,7 @@
    *    causes content to wrap 1 word per line:
    *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
    */
-  
-  .sr-only {
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    /* 1 */
-  }
+
   
   /*
    * Extends the .sr-only class to allow the element
@@ -148,9 +127,6 @@
    * Hide visually and from screen readers, but maintain layout
    */
   
-  .invisible {
-    visibility: hidden;
-  }
   
   /*
    * Clearfix: contain floats

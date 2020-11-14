@@ -7,7 +7,7 @@ var nytApi = 'dWR7musz8J5oEwVOdiYZeCsFGdcOnDDO';
 var askURL = 'https://api.nytimes.com/svc/movies/v2/reviews/search.json?query='+moviePick+'&api-key=' + nytApi;
 var tmdbURL =  'https://api.themoviedb.org/3/search/movie?api_key='+tmdbApi+'&language=en-US&query='+movie+'&page=1&include_adult=false';
 
-
+//https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=hero&api-key=dWR7musz8J5oEwVOdiYZeCsFGdcOnDDO
 $.ajax({
     url: tmdbURL,
     method: 'GET'
