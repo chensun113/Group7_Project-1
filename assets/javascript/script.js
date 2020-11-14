@@ -1,3 +1,24 @@
+<<<<<<< HEAD
+var key="afa38e9fd88f83e811a283779a635569"; // wait for sign up api key
+var nameInputEl = document.querySelector("#start");//jquery lisener from input box;
+var formSubmitHandler = function (event) {
+    event.preventDefault();
+    var searchname = nameInputEl.value.trim();
+    if (searchname) {
+      getMoiveStatus(searchname);//function
+      repoContainerEl.textContent = "";
+      nameInputEl.value = "";
+    } else {
+    //   alert(‘Please enter a correct name’);
+    console.log("Wrong input");
+    }
+  };
+
+  var   getMoiveStatus= function (repos, searchTerm){
+    
+
+  }
+=======
 function search(movie) {
 
 
@@ -7,7 +28,7 @@ var nytApi = 'dWR7musz8J5oEwVOdiYZeCsFGdcOnDDO';
 var askURL = 'https://api.nytimes.com/svc/movies/v2/reviews/search.json?query='+moviePick+'&api-key=' + nytApi;
 var tmdbURL =  'https://api.themoviedb.org/3/search/movie?api_key='+tmdbApi+'&language=en-US&query='+movie+'&page=1&include_adult=false';
 
-
+//https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=hero&api-key=dWR7musz8J5oEwVOdiYZeCsFGdcOnDDO
 $.ajax({
     url: tmdbURL,
     method: 'GET'
@@ -59,3 +80,4 @@ selction function  (this function is called when the user clicks on a move choic
 	response from NYT will provide data to construct all the main page elements.
 	this function is also called when a user clicks on the carousel of previously searched movies. */
 	
+>>>>>>> main
