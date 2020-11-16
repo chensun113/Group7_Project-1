@@ -28,8 +28,8 @@ for (let i = 0; i < response.results.length; i++) {
 } //end of search function.
 
 
-
-$("#input").on("click", function(event){  //this is the event handler for the search button
+//Changed ID name to searchButton (Hustin)
+$("#searchButton").on("click", function(event){  //this is the event handler for the search button
     event.preventDefault(); 
     var searchQuery = this.text();
 
@@ -65,4 +65,5 @@ selction function  (this function is called when the user clicks on a move choic
 	this.text() will be the full proper name of the movie, here is where we call the NYT API
 	response from NYT will provide data to construct all the main page elements.
 	this function is also called when a user clicks on the carousel of previously searched movies. */
-	
+    
+    
