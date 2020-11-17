@@ -183,6 +183,7 @@ h2 {
   abbr[title]::after {
     content: " (" attr(title) ")";
   }
+}
 
   /*
     * Don't show links that are fragment identifiers,
@@ -220,17 +221,4 @@ h2 {
       /* EXAMPLE Media Queries for Responsive Design. */
       /* These examples override the primary ('mobile first') styles. */
       /* Modify as content requires. */
-      /* ========================================================================== */ */
-  @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-    p,
-    h2,
-    h3 {
-      orphans: 3; 
-      widows: 3;
-    }
-    h2,
-    h3 {
-    page-break-after: avoid;
-    }
-
+      /* ========================================================================== */ 
