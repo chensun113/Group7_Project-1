@@ -7,7 +7,7 @@ var nytApi = 'dWR7musz8J5oEwVOdiYZeCsFGdcOnDDO';
 
 var askURL = 'https://api.nytimes.com/svc/movies/v2/reviews/search.json?query='+moviePick+'&api-key=' + nytApi;
 var tmdbURL =  'https://api.themoviedb.org/3/search/movie?api_key='+tmdbApi+'&language=en-US&query='+movie+'&page=1&include_adult=false';
-
+var moviePick;
 //https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=hero
 $.ajax({
     url: tmdbURL,
@@ -20,7 +20,11 @@ $.ajax({
 for (let i = 0; i < response.results.length; i++) {
     movieTitle = response.results[i].title;
     resultDiv = $("<button class='button is-ghost'>").text(movieTitle)
+
     $('#searchResults').append(resultDiv);                  //appends each result to an empty div 
+    if (i>=5) {     //limits the search results to 5 items
+        break
+    }
 
 }
 
@@ -32,7 +36,7 @@ for (let i = 0; i < response.results.length; i++) {
 //Changed ID name to searchButton (Hustin)
 $("#searchButton").on("click", function(event){  //this is the event handler for the search button
     event.preventDefault(); 
-    var searchQuery = this.text();
+    var searchQuery = $('.input').val();
 
     search(searchQuery); //calls the function that will call TMDB for the movie results list
     
@@ -46,8 +50,12 @@ $("#searchResults").on("click", function(event){
 })
 
 function nytResults(movieName) {
+//here all the info from the NYT is populated into the page.
 
-    //here all the info from the NYT is populated into the page.
+
+} 
+
+    
 
 }    
     
