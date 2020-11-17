@@ -134,7 +134,16 @@ h2 {
 }
 
 
-
+.feet::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .footericon{
+    float: left;
+    width: 10%;
+    padding: 5px;
+  }
 
 
 /* ==========================================================================
@@ -204,6 +213,15 @@ h2 {
     page-break-inside: avoid;
   }
 
+  
+  /* ==========================================================================
+      EXAMPLE Media Queries for Responsive Design.
+      These examples override the primary ('mobile first') styles.
+      Modify as content requires.
+      ========================================================================== */
+  @media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+=======
   /*
     * Printing Tables:
     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
