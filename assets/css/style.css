@@ -8,6 +8,41 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+<<<<<<< HEAD
+   html {
+    Background-color: #0000;
+    font-size: 1em;
+    line-height: 1.4;
+    font-family: 'Big Shoulders Stencil Text', cursive;
+  }
+  /* ==========================================================================
+      Author's custom styles
+      ========================================================================== */
+  .description {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+  }
+  body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: yellow;
+    font-family: 'Big Shoulders Stencil Text', cursive;
+  }
+  #columnOne {
+    border-radius: 5px;
+    border-color: gold;
+    background-color: #181818;
+  }
+  #columnTwo {
+    border-radius: 5px;
+    border-color: gold;
+    background-color: #181818;
+  }
+  
+  .feet::after {
+=======
 
    
 html {
@@ -135,14 +170,23 @@ h2 {
 
 
 .feet::after {
+>>>>>>> d96a3b62736b9a25c0e3c728cada66507f518c21
     content: "";
     clear: both;
     display: table;
+  }
+  .footericon02{
+    float: left;
+    width: 10%;
+    padding: 5px;
+    border-radius: 5px;
+    border-color: gold;
   }
   .footericon{
     float: left;
     width: 10%;
     padding: 5px;
+  
   }
 
 
