@@ -39,16 +39,24 @@
     border-color: gold;
     background-color: #181818;
   }
-
+  
   .feet::after {
     content: "";
     clear: both;
     display: table;
   }
+  .footericon02{
+    float: left;
+    width: 10%;
+    padding: 5px;
+    border-radius: 5px;
+    border-color: gold;
+  }
   .footericon{
     float: left;
     width: 10%;
     padding: 5px;
+  
   }
   /* ==========================================================================
       EXAMPLE Media Queries for Responsive Design.
