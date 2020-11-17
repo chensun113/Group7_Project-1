@@ -54,20 +54,21 @@
       <div id="searchBar" class="field has-addons has-addons-fullwidth">
 
         <div class="control">
-          <input class="input" type="text" placeholder="Type a movie title">
+          <input id="searchInput" class="input" type="text" placeholder="Type a movie title">
         </div>
         <div class="control">
-          <a id="searchButton" class="button is-fullwidth">
-            <!-- <i class="fa fa-search"></i> --> Search
-          </a>
+          <button id="searchButton" class="button is-fullwidth">
+            Search
+          </button>
         </div>
       </div>
+      <div id="searchResults"></div>
     </div>
 
     <!-- Column 2 -->
     <div class="column is-8" id="columnTwo">
       Second column
-      <div id="searchResults"></div>
+      <div id="nytInfo"></div>      
     </div>
 
   </div>
@@ -75,7 +76,7 @@
   <!-- Carousel -->
   <section id="slideshow">
     <h2>Test h2 header for carousel</h2>
-    <div class="autoplay slider">
+    <div id="carousel" class="autoplay slider">
       <div>
         <img src="http://placehold.it/350x300?text=1">
       </div>
