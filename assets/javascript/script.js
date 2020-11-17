@@ -49,7 +49,7 @@ function nytResults(movieName) {
 
     //here all the info from the NYT is populated into the page.
 
-    
+}    
     
     /*
         js file structure:
@@ -62,4 +62,3 @@ function nytResults(movieName) {
         this.text() will be the full proper name of the movie, here is where we call the NYT API
         response from NYT will provide data to construct all the main page elements.
         this function is also called when a user clicks on the carousel of previously searched movies. */
-        
