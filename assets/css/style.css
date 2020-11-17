@@ -8,15 +8,14 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-
-   
-html {
-  Background-color: #101010;
-  font-size: 1em;
-  line-height: 1.4;
-  font-family: 'Big Shoulders Stencil Text', cursive;
-}
-  
+ 
+  #columnTwo {
+    border-radius: 5px;
+    border: 1px solid gold;
+    background-color: #101010;
+    color: gold;
+    margin-top: 50px;
+  }
   
 /* ==========================================================================
     Author's custom styles
@@ -138,97 +137,79 @@ h2 {
     content: "";
     clear: both;
     display: table;
+
   }
-  .footericon02{
-    float: left;
-    width: 10%;
-    padding: 5px;
-    border-radius: 5px;
-    border-color: gold;
-  }
-  .footericon{
-    float: left;
-    width: 10%;
-    padding: 5px;
   
+  .slick-prev:before, .slick-next:before {
+    color: gold;
   }
-
-
-/* ==========================================================================
-    EXAMPLE Media Queries for Responsive Design.
-    These examples override the primary ('mobile first') styles.
-    Modify as content requires.
-    ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-    Print styles.
-    Inlined to avoid the additional HTTP request:
-    https://www.phpied.com/delay-loading-your-print-css/
-    ========================================================================== */
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
+  
+  .slick-dots li button:before {
+    color: gold;
   }
-
-  a,
-  a:visited {
-    text-decoration: underline;
+  
+  .slider {
+    width: 50%;
+    margin: 100px auto;
   }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
+  
+  .slick-slide {
+    margin: 0px 20px;
   }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
+  
+  .slick-slide img {
+    width: 100%;
   }
-}
-
-  /*
-    * Don't show links that are fragment identifiers,
-    * or use the `javascript:` pseudo protocol
-    */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
+  
+  .slick-slide {
+    transition: all ease-in-out .3s;
+    opacity: .2;
   }
-
-  pre {
-    white-space: pre-wrap !important;
+  
+  .slick-active {
+    opacity: .5;
   }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
+  
+  .slick-current {
+    opacity: 1;
   }
-
+  
+  h2 {
+    text-align: center;
+    padding-top: 50px;
+    font-size: 50px;
+  }
+  
+  
+  .feet::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    .footericon02{
+      float: left;
+      width: 10%;
+      padding: 5px;
+      border-radius: 5px;
+      border-color: gold;
+    }
+    .footericon{
+      float: left;
+      width: 10%;
+      padding: 5px;
+    
+    }
+  
   
   /* ==========================================================================
       EXAMPLE Media Queries for Responsive Design.
       These examples override the primary ('mobile first') styles.
       Modify as content requires.
       ========================================================================== */
+  
   @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
+
   }
   /*
     * Printing Tables:
@@ -236,15 +217,91 @@ h2 {
     */
   thead {
     display: table-header-group;
+
   }
-
-  tr,
-  img {
-    page-break-inside: avoid;
+  
+  @media print,
+    (-webkit-min-device-pixel-ratio: 1.25),
+    (min-resolution: 1.25dppx),
+    (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
   }
-
-
-      /* EXAMPLE Media Queries for Responsive Design. */
-      /* These examples override the primary ('mobile first') styles. */
-      /* Modify as content requires. */
-      /* ========================================================================== */ 
+  
+  /* ==========================================================================
+      Print styles.
+      Inlined to avoid the additional HTTP request:
+      https://www.phpied.com/delay-loading-your-print-css/
+      ========================================================================== */
+  
+  @media print {
+    *,
+    *::before,
+    *::after {
+      background: #fff !important;
+      color: #000 !important;
+      /* Black prints faster */
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+  
+    a,
+    a:visited {
+      text-decoration: underline;
+    }
+  
+    a[href]::after {
+      content: " (" attr(href) ")";
+    }
+  
+    abbr[title]::after {
+      content: " (" attr(title) ")";
+    }
+  }
+  
+    /*
+      * Don't show links that are fragment identifiers,
+      * or use the `javascript:` pseudo protocol
+      */
+    a[href^="#"]::after,
+    a[href^="javascript:"]::after {
+      content: "";
+    }
+  
+    pre {
+      white-space: pre-wrap !important;
+    }
+  
+    pre,
+    blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+    }
+  
+    
+    /* ==========================================================================
+        EXAMPLE Media Queries for Responsive Design.
+        These examples override the primary ('mobile first') styles.
+        Modify as content requires.
+        ========================================================================== */
+    @media only screen and (min-width: 35em) {
+      /* Style adjustments for viewports that meet the condition */
+    }
+    /*
+      * Printing Tables:
+      * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+      */
+    thead {
+      display: table-header-group;
+    }
+  
+    tr,
+    img {
+      page-break-inside: avoid;
+    }
+  
+  
+        /* EXAMPLE Media Queries for Responsive Design. */
+        /* These examples override the primary ('mobile first') styles. */
+        /* Modify as content requires. */
+        /* ========================================================================== */ 
+  
