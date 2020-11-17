@@ -3,11 +3,9 @@ function search(movie) {
 
 
 var tmdbApi = 'a4e5136717cef17c7b2d9c9331196e91';
-var nytApi = 'dWR7musz8J5oEwVOdiYZeCsFGdcOnDDO';
 
-var askURL = 'https://api.nytimes.com/svc/movies/v2/reviews/search.json?query='+moviePick+'&api-key=' + nytApi;
 var tmdbURL =  'https://api.themoviedb.org/3/search/movie?api_key='+tmdbApi+'&language=en-US&query='+movie+'&page=1&include_adult=false';
-var moviePick;
+
 //https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=hero
 $.ajax({
     url: tmdbURL,
@@ -51,6 +49,21 @@ $("#searchResults").on("click", function(event){
 
 function nytResults(movieName) {
 //here all the info from the NYT is populated into the page.
+    var nytApi = 'dWR7musz8J5oEwVOdiYZeCsFGdcOnDDO';
+
+    var askURL = 'https://api.nytimes.com/svc/movies/v2/reviews/search.json?query='+movieName+'&api-key=' + nytApi;
+
+    $.ajax({
+        url: askURL,
+        method: 'GET'
+    }).then(function (response) {  
+        
+        console.log("the NYT response is: "+response)
+
+
+    
+
+})
 
 
 } 
