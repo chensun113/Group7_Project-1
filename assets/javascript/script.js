@@ -70,7 +70,7 @@ function nytResults(movieName) {
 
     
 
-}    
+    
     
     /*
         js file structure:
