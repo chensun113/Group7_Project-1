@@ -21,9 +21,9 @@ for (let i = 0; i < response.results.length; i++) {
 
     $('#searchResults').append(rowDiv);
     $('#searchResults').append(resultDiv);                  //appends each result to an empty div 
-    if (i>=4) {     //limits the search results to 5 items
-        break
-    }
+    // if (i>=4) {    limits the search results to 5 items
+    //     break
+    // }
 }
 
 })
@@ -82,8 +82,8 @@ function nytResults(movieName) {
             //adding content to the divs.
             $('#tmdbDisplayTitle').text(movieName);
 //Review    $('#tmdbDisplayDescription').text(response.results[0].display_title);
-            $('#nytDisplayRating').text(response.results[0].mpaa_rating);
-            $('#nytDisplayOpeningDate').text("The Opening Date is: "+response.results[0].opening_date);
+            $('#nytDisplayRating').text("Rating: " + response.results[0].mpaa_rating);
+            $('#nytDisplayOpeningDate').text("Release Date: " +response.results[0].opening_date);
             $('#nytDisplaySummaryShort').text(response.results[0].summary_short);
         
             var articleURLEL = $("<a href = "+response.results[0].link.url+"></a>").text(response.results[0].link.suggested_link_text);
