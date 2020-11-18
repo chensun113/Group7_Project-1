@@ -106,7 +106,7 @@ function nytResults(movieName) {
 
 } 
 
-    
+
 
     
     
