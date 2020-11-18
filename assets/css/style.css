@@ -24,7 +24,7 @@
     height: 100%;
     background-color: #101010;
     color:gold;    
-    font-family: 'Big Shoulders Stencil Text', cursive;
+    /* font-family: 'Big Shoulders Stencil Text', cursive; */
     }
     /* Column Styling */
     #columns {
@@ -55,7 +55,6 @@
       color: black;
       font-weight: 600;
       text-align: center;
-      
     }
     /* Column 2 Content */
     #columnTwo {
@@ -64,13 +63,37 @@
     background-color: #101010;
     color: gold;
     margin-top: 50px;
+    text-align: center;
+    }
+    #tmdbDisplayPicture {
+    margin-top: 10px;    
+       }
+    #pictureMovie {
+    border: 1px solid gold; 
+    border-radius: 5px; 
+    }
+    #nytDisplayOpeningDate{
+    margin-bottom: 10px;
+    }
+    #trailerMovie {
+    border: 1px solid gold;
+    border-radius: 5px;
+    }
+    #nytDisplaySummaryShort {
+    margin-top: 10px;
+    }
+    #nytDisplayArticle {
+    margin-top: 20px;
+    }
+    #titleSaveToCarousel{
+    margin-top: 20px;
     }
     /* Carousel Styling */
     h2 {
-      text-align: center;
-      padding-top: 50px;
-      font-size: 50px;
-      }
+    text-align: center;
+    padding-top: 50px;
+    font-size: 50px;
+    }
     #slideshow {
     box-sizing: border-box;
     }
