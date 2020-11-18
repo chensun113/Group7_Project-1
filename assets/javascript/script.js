@@ -58,12 +58,37 @@ function nytResults(movieName) {
         method: 'GET'
     }).then(function (response) {  
         
-        console.log("the NYT response is: "+response)
+        console.log("the NYT response is: "+response) 
+        //clearing out the previously entered info.
+        $('#tmdbDisplayTitle').empty();
+        $('#tmdbDisplayDescription').empty();
+        $('#nytDisplayRating').empty();
+        $('#nytDisplayOpeningDate').empty();
+        $('#nytDisplaySummaryShort').empty();
+        $('#nytDisplayArticle').empty();
+        $('#titleSaveToCarousel').empty();
+
+        //adding content to the divs.
+        $('#tmdbDisplayTitle').text(movieName);
+        $('#tmdbDisplayDescription').text(response.results[0].display_title);
+        $('#nytDisplayRating').text(response.results[0].mpaa_rating);
+        $('#nytDisplayOpeningDate').text("The Opening Date is: "+response.results[0].opening_date);
+        $('#nytDisplaySummaryShort').text(response.results[0].summary_short);
+        
+        var articleURLEL = $("<a href = "+response.results[0].link.url+"></a>").text(response.results[0].link.suggested_link_text);
+
+        $('#nytDisplayArticle').append(articleURLEL);
+
+
+        var saveBtn = $("<button class='button is-ghost'>").text(movieTitle);
+        $('#titleSaveToCarousel').append(saveBtn);
+
 
 
     
 
 })
+
 
 } 
 
