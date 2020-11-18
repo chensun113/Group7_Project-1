@@ -1,10 +1,7 @@
-var tmdbApi = 'a4e5136717cef17c7b2d9c9331196e91';
-
 function search(movie) {
 
 
-
-
+var tmdbApi = 'a4e5136717cef17c7b2d9c9331196e91';
 
 var tmdbURL =  'https://api.themoviedb.org/3/search/movie?api_key='+tmdbApi+'&language=en-US&query='+movie+'&page=1&include_adult=false';
 
