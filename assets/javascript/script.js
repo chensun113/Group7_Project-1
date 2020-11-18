@@ -1,7 +1,6 @@
 function search(movie) {
 
 
-
 var tmdbApi = 'a4e5136717cef17c7b2d9c9331196e91';
 
 var tmdbURL =  'https://api.themoviedb.org/3/search/movie?api_key='+tmdbApi+'&language=en-US&query='+movie+'&page=1&include_adult=false';
@@ -64,9 +63,11 @@ function nytResults(movieName) {
         //console.log()
 
         $('#tmdbDisplayTitle').empty();
-        $('#tmdbDisplayDescription').empty();
+        $('#tmdbDisplayPicture').empty();
+//Review  $('#tmdbDisplayDescription').empty();
         $('#nytDisplayRating').empty();
         $('#nytDisplayOpeningDate').empty();
+        $('#tmdbDisplayTrailer').empty();
         $('#nytDisplaySummaryShort').empty();
         $('#nytDisplayArticle').empty();
         $('#titleSaveToCarousel').empty();
@@ -76,11 +77,11 @@ function nytResults(movieName) {
         
         
             //clearing out the previously entered info.
-
+         
 
             //adding content to the divs.
             $('#tmdbDisplayTitle').text(movieName);
-            $('#tmdbDisplayDescription').text(response.results[0].display_title);
+//Review    $('#tmdbDisplayDescription').text(response.results[0].display_title);
             $('#nytDisplayRating').text(response.results[0].mpaa_rating);
             $('#nytDisplayOpeningDate').text("The Opening Date is: "+response.results[0].opening_date);
             $('#nytDisplaySummaryShort').text(response.results[0].summary_short);
@@ -97,12 +98,37 @@ function nytResults(movieName) {
                 url: 'https://api.themoviedb.org/3/search/movie?api_key=a4e5136717cef17c7b2d9c9331196e91&language=en-US&query='+movieName+'&page=1&include_adult=false',
                 method: 'GET'
             }).then(function (responsetmdb) {
-    
-                var posterURL ="https://image.tmdb.org/t/p/w185" + responsetmdb.results[0].poster_path
                 
-                var posterEL = $('<img src='+posterURL+'>');
-                $('#tmdbDisplayTitle').append(posterEL);
+                //Storing movie id in a variable
+                var movieId = responsetmdb.results[0].id;
+
+                var posterURL ="https://image.tmdb.org/t/p/w185" + responsetmdb.results[0].poster_path;
+               
+                
+                var posterEL = $('<img id="pictureMovie" src='+posterURL+'>');
+                $('#tmdbDisplayPicture').append(posterEL);
+
+
+                $.ajax({
+                    url: 'http://api.themoviedb.org/3/movie/'+movieId+'/videos?api_key=a4e5136717cef17c7b2d9c9331196e91',
+                    method: 'GET'
+                }).then(function (trailertmdb) {
+        
+                   console.log(trailertmdb)
+                    
+                    var movieTrailer = trailertmdb.results[0].key;
+                    console.log(movieTrailer)
+                    
+                  
+                    var trailerEl = $('<div id="trailerMovie"><iframe width="560" height="315" src="https://www.youtube.com/embed/'+movieTrailer+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+                    $('#tmdbDisplayTrailer').append(trailerEl);
+    
+                    
+                    console.log(movieId)
+                })
             })
+
+           
     
         }
         else{
@@ -117,7 +143,7 @@ function nytResults(movieName) {
                 
                 var posterEL = $('<img src='+posterURL+'>');
                 
-                $('#tmdbDisplayDescription').append(posterEL);
+                $('#tmdbDisplayPicture').append(posterEL);
 
             })
         }
