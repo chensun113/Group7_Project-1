@@ -35,7 +35,7 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <!-- <a class="navbar-item" href="https://bulma.io"> -->
-      <img src="./assets/images/Project_Logo.png"
+      <img src="./assets/images/Colour_Match_Logo.png"
         alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
     </div>
   </nav>
@@ -52,7 +52,7 @@
     <div class="column is-4" id="columnOne">
       <div id="searchBar" class="field has-addons has-addons-fullwidth">
         <div class="control">
-          <input id="searchInput" class="input" type="text" placeholder="Type a movie title">
+          <input id="searchInput" class="input" type="text" placeholder="Type a movie title" onkeydown="if (event.keyCode == 13) document.getElementById('searchButton').click()">
         </div>
         <div class="control">
           <button id="searchButton" class="button is-fullwidth">
@@ -70,7 +70,7 @@
 
     <!-- Column 2 -->
     <div class="column is-8" id="columnTwo">
-      Second column
+      <h3>This title's information:</h3>
       <div id="tmdbDisplayTitle"></div>      
       <div id="tmdbDisplayPicture"></div>  
       <div id="tmdbDisplayDescription"></div> 
