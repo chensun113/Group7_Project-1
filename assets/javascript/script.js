@@ -18,7 +18,7 @@ $.ajax({
 for (let i = 0; i < response.results.length; i++) {
     movieTitle = response.results[i].title;
     var rowDiv = $("<div class='row is-full test'></div>")
-    var resultDiv = $("<p class='is-ghost is-fullwidth searchResultButton'></p>").text(movieTitle)
+    var resultDiv = $("<p id='searchResultStyling'></p>").text(movieTitle)
 
     $('#searchResults').append(rowDiv);
     $('#searchResults').append(resultDiv);                  //appends each result to an empty div 
@@ -92,6 +92,22 @@ function nytResults(movieName) {
 
             var saveBtn = $("<button class='button is-ghost'>").text(movieTitle);
             $('#titleSaveToCarousel').append(saveBtn);
+
+            $.ajax({
+                url: 'https://api.themoviedb.org/3/search/movie?api_key=a4e5136717cef17c7b2d9c9331196e91&language=en-US&query='+movieName+'&page=1&include_adult=false',
+                method: 'GET'
+            }).then(function (responsetmdb) {
+    
+                var posterURL ="https://image.tmdb.org/t/p/w185" + responsetmdb.results[0].poster_path
+                
+                var posterEL = $('<img src='+posterURL+'>');
+                $('#tmdbDisplayTitle').append(posterEL);
+
+
+
+    
+            })
+    
         }
         else{
             $('#tmdbDisplayTitle').empty();
@@ -99,9 +115,10 @@ function nytResults(movieName) {
         }
 
 
+
     
 
-})
+})//end of NYT api call
 
 
 } 
