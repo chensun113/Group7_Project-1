@@ -102,16 +102,24 @@ function nytResults(movieName) {
                 
                 var posterEL = $('<img src='+posterURL+'>');
                 $('#tmdbDisplayTitle').append(posterEL);
-
-
-
-    
             })
     
         }
         else{
             $('#tmdbDisplayTitle').empty();
-            $('#tmdbDisplayTitle').text("This movie hasn't yet been reviewed by the NYT, so blame them, the API works fine.")
+            $('#tmdbDisplayTitle').text(movieName+"hasn't yet been reviewed by the NYT, so blame them, the API works fine. Anyway heres a poster (thanks TMDB!) so this space isnt empty:")
+            $.ajax({
+                url: 'https://api.themoviedb.org/3/search/movie?api_key=a4e5136717cef17c7b2d9c9331196e91&language=en-US&query='+movieName+'&page=1&include_adult=false',
+                method: 'GET'
+            }).then(function (responsetmdb) {
+    
+                var posterURL ="https://image.tmdb.org/t/p/w185" + responsetmdb.results[0].poster_path
+                
+                var posterEL = $('<img src='+posterURL+'>');
+                
+                $('#tmdbDisplayDescription').append(posterEL);
+
+            })
         }
 
 
