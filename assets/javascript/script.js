@@ -93,7 +93,7 @@ function nytResults(movieName) {
 
 } 
 
-    
+
 
     
     
