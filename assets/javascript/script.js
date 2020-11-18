@@ -41,7 +41,7 @@ $("#searchButton").on("click", function(event){  //this is the event handler for
 
 })
 
-$("#searchResults").on("click", function(event){
+$("#searchResults").on("click","button", function(event){
     event.preventDefault();
     nytResults($(this).text());
 
@@ -57,8 +57,9 @@ function nytResults(movieName) {
         url: askURL,
         method: 'GET'
     }).then(function (response) {  
+        console.log("NYT response is:");
+        console.log(response) ;
         
-        console.log("the NYT response is: "+response) 
         //clearing out the previously entered info.
         $('#tmdbDisplayTitle').empty();
         $('#tmdbDisplayDescription').empty();
