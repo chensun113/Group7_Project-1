@@ -43,9 +43,19 @@
     background-color: gold;
     }
     .searchResultButton {
-      /* font-size: 80%;
-      word-wrap: break-word; */
       overflow-wrap: break-word;
+    }
+    #searchResultStyling {
+      cursor: pointer;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-bottom: 5px;
+      border: 1px solid white;
+      border-radius: 5px;
+      background-color: gold;
+      color: black;
+      font-weight: 600;
+      text-align: center;
+      
     }
     /* Column 2 Content */
     #columnTwo {

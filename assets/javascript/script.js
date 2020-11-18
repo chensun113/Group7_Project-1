@@ -18,7 +18,7 @@ $.ajax({
 for (let i = 0; i < response.results.length; i++) {
     movieTitle = response.results[i].title;
     var rowDiv = $("<div class='row is-full test'></div>")
-    var resultDiv = $("<p class='is-ghost is-fullwidth searchResultButton'></p>").text(movieTitle)
+    var resultDiv = $("<p id='searchResultStyling'></p>").text(movieTitle)
 
     $('#searchResults').append(rowDiv);
     $('#searchResults').append(resultDiv);                  //appends each result to an empty div 
