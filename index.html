@@ -52,7 +52,7 @@
     <div class="column is-4" id="columnOne">
       <div id="searchBar" class="field has-addons has-addons-fullwidth">
         <div class="control">
-          <input id="searchInput" class="input" type="text" placeholder="Type a movie title">
+          <input id="searchInput" class="input" type="text" placeholder="Type a movie title" onkeydown="if (event.keyCode == 13) document.getElementById('searchButton').click()">
         </div>
         <div class="control">
           <button id="searchButton" class="button is-fullwidth">
@@ -88,7 +88,7 @@
     <h2>Test h2 header for carousel</h2>
     <div id="carousel" class="autoplay slider">
       <div>
-        <img src="http://placehold.it/350x300?text=1" id="carousel1">
+        <img src="http://placehold.it/350x300?text=1">
       </div>
       <div>
         <img src="http://placehold.it/350x300?text=2">
