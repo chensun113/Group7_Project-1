@@ -17,13 +17,14 @@ $.ajax({
 //this loop will loop through all of the results given to us from TMDB api, each result's title is appendended to the list of search results
 for (let i = 0; i < response.results.length; i++) {
     movieTitle = response.results[i].title;
-    resultDiv = $("<button class='button is-ghost'>").text(movieTitle)
+    var rowDiv = $("<div class='row is-full test'></div>")
+    var resultDiv = $("<p class='is-ghost is-fullwidth searchResultButton'></p>").text(movieTitle)
 
+    $('#searchResults').append(rowDiv);
     $('#searchResults').append(resultDiv);                  //appends each result to an empty div 
-    if (i>=5) {     //limits the search results to 5 items
+    if (i>=4) {     //limits the search results to 5 items
         break
     }
-
 }
 
 })
@@ -41,10 +42,10 @@ $("#searchButton").on("click", function(event){  //this is the event handler for
 
 })
 
-$("#searchResults").on("click","button", function(event){
-    event.preventDefault();
+$("#searchResults").on("click","p", function(event){
+    //event.preventDefault();
     nytResults($(this).text());
-
+    console.log(event.target);
 })
 
 function nytResults(movieName) {
@@ -59,8 +60,9 @@ function nytResults(movieName) {
     }).then(function (response) {  
         console.log("NYT response is:");
         console.log(response) ;
-        
-        //clearing out the previously entered info.
+
+        //console.log()
+
         $('#tmdbDisplayTitle').empty();
         $('#tmdbDisplayDescription').empty();
         $('#nytDisplayRating').empty();
@@ -69,21 +71,32 @@ function nytResults(movieName) {
         $('#nytDisplayArticle').empty();
         $('#titleSaveToCarousel').empty();
 
-        //adding content to the divs.
-        $('#tmdbDisplayTitle').text(movieName);
-        $('#tmdbDisplayDescription').text(response.results[0].display_title);
-        $('#nytDisplayRating').text(response.results[0].mpaa_rating);
-        $('#nytDisplayOpeningDate').text("The Opening Date is: "+response.results[0].opening_date);
-        $('#nytDisplaySummaryShort').text(response.results[0].summary_short);
+        if (response.num_results > 0) { //needs fixing.
+            
         
-        var articleURLEL = $("<a href = "+response.results[0].link.url+"></a>").text(response.results[0].link.suggested_link_text);
+        
+            //clearing out the previously entered info.
 
-        $('#nytDisplayArticle').append(articleURLEL);
+
+            //adding content to the divs.
+            $('#tmdbDisplayTitle').text(movieName);
+            $('#tmdbDisplayDescription').text(response.results[0].display_title);
+            $('#nytDisplayRating').text(response.results[0].mpaa_rating);
+            $('#nytDisplayOpeningDate').text("The Opening Date is: "+response.results[0].opening_date);
+            $('#nytDisplaySummaryShort').text(response.results[0].summary_short);
+        
+            var articleURLEL = $("<a href = "+response.results[0].link.url+"></a>").text(response.results[0].link.suggested_link_text);
+
+            $('#nytDisplayArticle').append(articleURLEL);
 
 
-        var saveBtn = $("<button class='button is-ghost'>").text(movieTitle);
-        $('#titleSaveToCarousel').append(saveBtn);
-
+            var saveBtn = $("<button class='button is-ghost'>").text(movieTitle);
+            $('#titleSaveToCarousel').append(saveBtn);
+        }
+        else{
+            $('#tmdbDisplayTitle').empty();
+            $('#tmdbDisplayTitle').text("This movie hasn't yet been reviewed by the NYT, so blame them, the API works fine.")
+        }
 
 
     
