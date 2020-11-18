@@ -17,13 +17,14 @@ $.ajax({
 //this loop will loop through all of the results given to us from TMDB api, each result's title is appendended to the list of search results
 for (let i = 0; i < response.results.length; i++) {
     movieTitle = response.results[i].title;
-    resultDiv = $("<button class='button is-ghost'>").text(movieTitle)
+    var rowDiv = $("<div class='row is-full test'></div>")
+    var resultDiv = $("<p class='is-ghost is-fullwidth searchResultButton'></p>").text(movieTitle)
 
+    $('#searchResults').append(rowDiv);
     $('#searchResults').append(resultDiv);                  //appends each result to an empty div 
-    if (i>=5) {     //limits the search results to 5 items
+    if (i>=4) {     //limits the search results to 5 items
         break
     }
-
 }
 
 })
@@ -41,10 +42,10 @@ $("#searchButton").on("click", function(event){  //this is the event handler for
 
 })
 
-$("#searchResults").on("click","button", function(event){
-    event.preventDefault();
+$("#searchResults").on("click","p", function(event){
+    //event.preventDefault();
     nytResults($(this).text());
-
+    console.log(event.target);
 })
 
 function nytResults(movieName) {
