@@ -17,5 +17,4 @@
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5, Javascript
-    jQuery, Modernizr, Normalize.css
+    CSS3, HTML5, Javascript, jQuery, Normalize.css, bulma, slick

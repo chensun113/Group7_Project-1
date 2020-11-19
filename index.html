@@ -3,38 +3,31 @@
 
 <head>
   <meta charset="utf-8">
-  <!-- Title needs to be changed -->
   <title>Group 7 Project :: Welcome</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="theme-color" content="#fafafa">
-  <!-- favicon.ico -->
-  <link rel="apple-touch-icon" href="./assets/images/favicon.ico">
-  <!-- Normalize works like a CSS reset -->
+
   <link rel="stylesheet" href="assets/css/normalize.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" type="text/css" href="assets/css/slick.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
     integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
     crossorigin="anonymous" />
-  <!-- <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
     integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
     crossorigin="anonymous" />
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="apple-touch-icon" href="./assets/images/favicon.ico">
 </head>
 
 <body>
-  <!-- Add your site or application content here -->
 
   <!-- Navbar with site logo -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <!-- <a class="navbar-item" href="https://bulma.io"> -->
       <img src="./assets/images/Colour_Match_Logo.png"
         alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
     </div>
@@ -49,10 +42,12 @@
   <!-- Created 2 columns, 1 for search bar, 2 for search results -->
   <div class="columns" id="columns">
 
+    <!-- Column 1 -->
     <div class="column is-4" id="columnOne">
       <div id="searchBar" class="field has-addons has-addons-fullwidth">
         <div class="control">
-          <input id="searchInput" class="input" type="text" placeholder="Type a movie title" onkeydown="if (event.keyCode == 13) document.getElementById('searchButton').click()">
+          <input id="searchInput" class="input" type="text" placeholder="Type a movie title"
+            onkeydown="if (event.keyCode == 13) document.getElementById('searchButton').click()">
         </div>
         <div class="control">
           <button id="searchButton" class="button is-fullwidth">
@@ -64,22 +59,24 @@
       <table id="searchRow">
         <div id="searchResults">
         </div>
-      </table>  
-      </div>
+      </table>
+    </div>
 
 
     <!-- Column 2 -->
     <div class="column is-8" id="columnTwo">
+
+      <!-- We display the information from API calls to these divs -->
       <h3>This title's information:</h3>
-      <div id="tmdbDisplayTitle"></div>      
-      <div id="tmdbDisplayPicture"></div>  
-      <div id="tmdbDisplayDescription"></div> 
-      <div id="nytDisplayRating"></div> 
-      <div id="nytDisplayOpeningDate"></div>  <!--Release date-->
+      <div id="tmdbDisplayTitle"></div>
+      <div id="tmdbDisplayPicture"></div>
+      <div id="tmdbDisplayDescription"></div>
+      <div id="nytDisplayRating"></div>
+      <div id="nytDisplayOpeningDate"></div>
       <div id="tmdbDisplayTrailer"></div>
-      <div id="nytDisplaySummaryShort"></div> 
-      <div id="nytDisplayArticle"></div> 
-      <div id="titleSaveToCarousel"></div> <!--Save button-->      
+      <div id="nytDisplaySummaryShort"></div>
+      <div id="nytDisplayArticle"></div>
+      <div id="titleSaveToCarousel"></div>
     </div>
 
   </div>
@@ -110,24 +107,22 @@
 
   </section>
 
-  
-  <!-- <footer class ="feet" id ="feet" >
-    <img class ="img00" id = "img01 " src = "assets/images/twitterICON.jpeg" alt ="twicon" style ="width:5px;height:5px">
-  </footer> -->
 
 
-  <footer class ="feet" id ="feet" style ="padding-top:100px;padding-left: 500px;">
-    <!-- <div class ="footericon" ></div>
-    <div class ="footericon" ></div>
-    <div class ="footericon" ></div> -->
-    <div class ="footericon">
-     <img src="assets/images/ny.png" style ="width:30px;height: 30px;">
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <a href="https://www.nytimes.com/section/movies" target="_blank"> 
+      <img src="assets/images/nyt.png" style="width:80px;height: 80px;">
+      </a>
+      <a href="https://www.themoviedb.org/" target="_blank">
+      <img src="assets/images/tmdb.png" style="width:80px;height: 80px">
+      </a>
     </div>
-    <div class ="footericon">
-    <img src="assets/images/play.jpeg" style ="width:30px;height: 30px">
-    </div>
+  </footer>
 
-  
+
+  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="assets/javascript/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"

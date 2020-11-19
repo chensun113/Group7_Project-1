@@ -91,7 +91,7 @@ function nytResults(movieName) {
             $('#nytDisplayArticle').append(articleURLEL);
 
 
-            var saveBtn = $("<button class='button is-ghost'>").text(movieTitle);
+            var saveBtn = $("<button class='button is-ghost'>").text("Save to favorites");
             $('#titleSaveToCarousel').append(saveBtn);
 
             $.ajax({
@@ -103,8 +103,7 @@ function nytResults(movieName) {
                 var movieId = responsetmdb.results[0].id;
 
                 var posterURL ="https://image.tmdb.org/t/p/w185" + responsetmdb.results[0].poster_path;
-               
-                
+                              
                 var posterEL = $('<img id="pictureMovie" src='+posterURL+'>');
                 $('#tmdbDisplayPicture').append(posterEL);
 
@@ -112,19 +111,13 @@ function nytResults(movieName) {
                 $.ajax({
                     url: 'http://api.themoviedb.org/3/movie/'+movieId+'/videos?api_key=a4e5136717cef17c7b2d9c9331196e91',
                     method: 'GET'
-                }).then(function (trailertmdb) {
-        
-                   console.log(trailertmdb)
-                    
+                }).then(function (trailertmdb) {       
+                                  
                     var movieTrailer = trailertmdb.results[0].key;
-                    console.log(movieTrailer)
-                    
-                  
+                                                     
                     var trailerEl = $('<div id="trailerMovie"><iframe width="560" height="315" src="https://www.youtube.com/embed/'+movieTrailer+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-                    $('#tmdbDisplayTrailer').append(trailerEl);
-    
-                    
-                    console.log(movieId)
+                    $('#tmdbDisplayTrailer').append(trailerEl);                     
+                 
                 })
             })
 
