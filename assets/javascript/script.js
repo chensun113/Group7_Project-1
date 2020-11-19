@@ -1,7 +1,6 @@
 function search(movie) {
 
 
-
 var tmdbApi = 'a4e5136717cef17c7b2d9c9331196e91';
 
 var tmdbURL =  'https://api.themoviedb.org/3/search/movie?api_key='+tmdbApi+'&language=en-US&query='+movie+'&page=1&include_adult=false';
@@ -22,9 +21,9 @@ for (let i = 0; i < response.results.length; i++) {
 
     $('#searchResults').append(rowDiv);
     $('#searchResults').append(resultDiv);                  //appends each result to an empty div 
-    if (i>=4) {     //limits the search results to 5 items
-        break
-    }
+    // if (i>=4) {    limits the search results to 5 items
+    //     break
+    // }
 }
 
 })
@@ -64,9 +63,11 @@ function nytResults(movieName) {
         //console.log()
 
         $('#tmdbDisplayTitle').empty();
-        $('#tmdbDisplayDescription').empty();
+        $('#tmdbDisplayPicture').empty();
+//Review  $('#tmdbDisplayDescription').empty();
         $('#nytDisplayRating').empty();
         $('#nytDisplayOpeningDate').empty();
+        $('#tmdbDisplayTrailer').empty();
         $('#nytDisplaySummaryShort').empty();
         $('#nytDisplayArticle').empty();
         $('#titleSaveToCarousel').empty();
@@ -76,13 +77,13 @@ function nytResults(movieName) {
         
         
             //clearing out the previously entered info.
-
+         
 
             //adding content to the divs.
             $('#tmdbDisplayTitle').text(movieName);
-            $('#tmdbDisplayDescription').text(response.results[0].display_title);
-            $('#nytDisplayRating').text(response.results[0].mpaa_rating);
-            $('#nytDisplayOpeningDate').text("The Opening Date is: "+response.results[0].opening_date);
+//Review    $('#tmdbDisplayDescription').text(response.results[0].display_title);
+            $('#nytDisplayRating').text("Rating: " + response.results[0].mpaa_rating);
+            $('#nytDisplayOpeningDate').text("Release Date: " +response.results[0].opening_date);
             $('#nytDisplaySummaryShort').text(response.results[0].summary_short);
         
             var articleURLEL = $("<a href = "+response.results[0].link.url+"></a>").text(response.results[0].link.suggested_link_text);
@@ -90,35 +91,76 @@ function nytResults(movieName) {
             $('#nytDisplayArticle').append(articleURLEL);
 
 
-            var saveBtn = $("<button class='button is-ghost'>").text(movieTitle);
+            var saveBtn = $("<button id='favoritesButton' class='button is-ghost'>").text("Save to favorites");
             $('#titleSaveToCarousel').append(saveBtn);
 
             $.ajax({
                 url: 'https://api.themoviedb.org/3/search/movie?api_key=a4e5136717cef17c7b2d9c9331196e91&language=en-US&query='+movieName+'&page=1&include_adult=false',
                 method: 'GET'
             }).then(function (responsetmdb) {
-    
-                var posterURL ="https://image.tmdb.org/t/p/w185" + responsetmdb.results[0].poster_path
                 
+<<<<<<< HEAD
                 var posterEL = $('<img src='+posterURL+'>');
                 $('#tmdbDisplayTitle').append(posterEL);
             
+=======
+                //Storing movie id in a variable
+                var movieId = responsetmdb.results[0].id;
+
+                var posterURL ="https://image.tmdb.org/t/p/w185" + responsetmdb.results[0].poster_path;
+                              
+                var posterEL = $('<img id="pictureMovie" src='+posterURL+'>');
+                $('#tmdbDisplayPicture').append(posterEL);
+
+
+                $.ajax({
+                    url: 'http://api.themoviedb.org/3/movie/'+movieId+'/videos?api_key=a4e5136717cef17c7b2d9c9331196e91',
+                    method: 'GET'
+                }).then(function (trailertmdb) {       
+                                  
+                    var movieTrailer = trailertmdb.results[0].key;
+                                                     
+                    var trailerEl = $('<div id="trailerMovie"><iframe width="560" height="315" src="https://www.youtube.com/embed/'+movieTrailer+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+                    $('#tmdbDisplayTrailer').append(trailerEl);                     
+                 
+                })
+>>>>>>> master
             })
+
+           
     
         }
         else{
             $('#tmdbDisplayTitle').empty();
-            $('#tmdbDisplayTitle').text(movieName+"hasn't yet been reviewed by the NYT, so blame them, the API works fine. Anyway heres a poster (thanks TMDB!) so this space isnt empty:")
+<<<<<<< HEAD
+            $('#tmdbDisplayTitle').text(movieName+" hasn't yet been reviewed by the NYT, so blame them, the API works fine. Anyway here's a poster (thanks TMDB!) so this space isn't empty:")
+=======
+            $('#tmdbDisplayTitle').text(movieName+" hasn't yet been reviewed by the NYT, so blame them, the API works fine. Anyway heres a poster (thanks TMDB!) so this space isnt empty:")
+>>>>>>> f8032cc7b3311d769a9019669f2dd8ce94991fd2
             $.ajax({
                 url: 'https://api.themoviedb.org/3/search/movie?api_key=a4e5136717cef17c7b2d9c9331196e91&language=en-US&query='+movieName+'&page=1&include_adult=false',
                 method: 'GET'
             }).then(function (responsetmdb) {
+
+                var movieId = responsetmdb.results[0].id;
     
                 var posterURL ="https://image.tmdb.org/t/p/w185" + responsetmdb.results[0].poster_path
                 
                 var posterEL = $('<img src='+posterURL+'>');
                 
-                $('#tmdbDisplayDescription').append(posterEL);
+                $('#tmdbDisplayPicture').append(posterEL);
+
+                $.ajax({
+                    url: 'http://api.themoviedb.org/3/movie/'+movieId+'/videos?api_key=a4e5136717cef17c7b2d9c9331196e91',
+                    method: 'GET'
+                }).then(function (trailertmdb) {       
+                                  
+                    var movieTrailer = trailertmdb.results[0].key;
+                                                     
+                    var trailerEl = $('<div id="trailerMovie"><iframe width="560" height="315" src="https://www.youtube.com/embed/'+movieTrailer+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+                    $('#tmdbDisplayTrailer').append(trailerEl);                     
+                 
+                })
 
             })
         }

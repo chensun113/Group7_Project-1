@@ -14,24 +14,27 @@
   .navbar {
     background-color: #101010;
     }
+
     .description {
     text-align: center;
     font-size: large;
     font-weight: bold;
     }
+
     body {
     width: 100%;
     height: 100%;
     background-color: #101010;
     color:gold;    
-    font-family: 'Big Shoulders Stencil Text', cursive;
     }
+
     /* Column Styling */
     #columns {
     padding-left: 20px;
     padding-right: 30px;
     column-gap: 10px;
     }
+
     /* Column 1 Content */
     #columnOne {
     border-radius: 5px;
@@ -39,12 +42,15 @@
     background-color: #101010;
     margin-top: 50px;
     }
+    
     #searchButton {
     background-color: gold;
     }
+
     .searchResultButton {
       overflow-wrap: break-word;
     }
+
     #searchResultStyling {
       cursor: pointer;
       font-family: Arial, Helvetica, sans-serif;
@@ -55,8 +61,8 @@
       color: black;
       font-weight: 600;
       text-align: center;
-      
     }
+
     /* Column 2 Content */
     #columnTwo {
     border-radius: 5px;
@@ -64,16 +70,50 @@
     background-color: #101010;
     color: gold;
     margin-top: 50px;
+    text-align: center;
     }
+
+    #tmdbDisplayPicture {
+    margin-top: 10px;    
+    }
+
+    #pictureMovie {
+    border: 1px solid gold; 
+    border-radius: 5px; 
+    }
+
+    #nytDisplayOpeningDate{
+    margin-bottom: 10px;
+    }
+    
+    #trailerMovie {
+    border: 1px solid gold;
+    border-radius: 5px;
+    }
+
+    #nytDisplaySummaryShort {
+    margin-top: 10px;
+    }
+
+    #nytDisplayArticle {
+    margin-top: 20px;
+    }
+
+    #titleSaveToCarousel{
+    margin-top: 20px;
+    }
+
     /* Carousel Styling */
     h2 {
-      text-align: center;
-      padding-top: 50px;
-      font-size: 50px;
-      }
+    text-align: center;
+    padding-top: 50px;
+    font-size: 50px;
+    }
+
     #slideshow {
     box-sizing: border-box;
     }
+
     .slick-next, .slick-prev {
     font-size: 0;
     line-height: 0;
@@ -92,73 +132,83 @@
     outline: 0;
     background: 0 0;
     }
+
     .slick-prev:before, .slick-next:before {
     color: gold;
     }
+
     .slick-dots li button:before {
     color: gold;
     }
+
     .slider {
     width: 50%;
     margin: 100px auto;
     }
+
     .slick-slide {
     margin: 0px 20px;
     }
+
     .slick-slide img {
     width: 100%;
     }
+
     .slick-slide {
     transition: all ease-in-out .3s;
     opacity: .2;
     }
+
     .slick-active {
     opacity: .5;
     }
+
     .slick-current {
     opacity: 1;
     }
+
     .slick-prev:before, .slick-next:before {
     color: gold;
     }
+
     .slick-dots li button:before {
     color: gold;
     }
+
+    .slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: gold;
+    }  
+
     .slider {
     width: 50%;
     margin: 100px auto;
     }
+
     .slick-slide {
     margin: 0px 20px;
     }
+
     .slick-slide img {
     width: 100%;
     }
+
     .slick-slide {
     transition: all ease-in-out .3s;
     opacity: .2;
     }
+
     .slick-active {
     opacity: .5;
     }
+
     .slick-current {
     opacity: 1;
     }
+
     /* Footer Styling */
-    .feet::after {
-    content: "";
-    clear: both;
-    display: table;
-    }
-    .footericon02 {
-    float: left;
-    width: 10%;
-    padding: 5px;
-    border-radius: 5px;
-    border-color: gold;
-    }
-    .footericon {
-    float: left;
-    width: 10%;
-    padding: 5px;
+    .footer {
+      background-color: gold;
+      border-top: 3px solid white;
+      padding: 2rem 1rem 4rem !important;
     }
