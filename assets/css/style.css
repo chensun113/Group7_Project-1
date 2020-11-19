@@ -110,6 +110,11 @@
     font-size: 50px;
     }
 
+    h3 {
+      text-align: center;
+      padding-top: 3em;
+    }
+
     #slideshow {
     box-sizing: border-box;
     }

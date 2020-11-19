@@ -106,7 +106,7 @@ function nytResults(movieName) {
             }).then(function (responsetmdb) {
                 
                 var posterEL = $('<img src='+posterURL+'>');
-                $('#tmdbDisplayTitle').append(posterEL);
+                // $('#tmdbDisplayTitle').append(posterEL);
             
                 //Storing movie id in a variable
                 var movieId = responsetmdb.results[0].id;
