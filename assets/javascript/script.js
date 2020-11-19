@@ -4,6 +4,8 @@ var movieList = [];
 init();
 function search(movie) {
 
+movieList = JSON.parse(localStorage.getItem('City')) || [];
+
 
 var tmdbApi = 'a4e5136717cef17c7b2d9c9331196e91';
 
@@ -188,13 +190,13 @@ $("#titleSaveToCarousel").on("click", function(event){
     
     // based on movieList.length add poster to carousel
     
-    $('#carousel').empty();
+    // $('#carousel').empty();
 
     for (let i = 0; i < movieList.length; i++) {
 
         // localStorage.getItem("movies") 
             
-        movieList = JSON.parse(localStorage.getItem("movies"));
+        // movieList = JSON.parse(localStorage.getItem("movies"));
         console.log(movieList)
         
         var carouselPosterURL = "https://image.tmdb.org/t/p/w185"+movieList[i][0].poster;
@@ -203,7 +205,11 @@ $("#titleSaveToCarousel").on("click", function(event){
 
         console.log(carouselPosterURL)
         // console.log(carouselIMG)
-        function sliderInit(){
+
+
+    }   
+
+    function sliderInit(){
         $('.autoplay').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -215,8 +221,6 @@ $("#titleSaveToCarousel").on("click", function(event){
           });
         };
         sliderInit();  
-
-    }   
     
 })
 
