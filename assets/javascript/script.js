@@ -1,6 +1,7 @@
-var posterGlobal
-var moviePick
-var movieList = []
+var posterGlobal;
+var moviePick;
+var movieList = [];
+init();
 function search(movie) {
 
 
@@ -178,18 +179,13 @@ $("#titleSaveToCarousel").on("click", function(event){
     event.preventDefault();
 
     //create object with poster and movie title
-    movieObj = {
+    movieObj = [{
         poster: posterGlobal,
         title: moviePick
-    }
+    }];
 
     movieList.push(movieObj)
-    //append object to array (from localstorage)
-
-    //then store the entire thing in localstorage
-
-    //need init() function to loop through already saved entries and enter them into the carousel
-
+    
     localStorage.setItem("movies",JSON.stringify(movieList))
     
     // based on movieList.length add poster to carousel
@@ -197,9 +193,38 @@ $("#titleSaveToCarousel").on("click", function(event){
     
 })
 
+//PLEASE LOOK AT MEEEEEEEEE 
+function init() {
+
+    //please fix this
+    if (localStorage.getItem("movies") != null) {
+            
+        movieList = JSON.parse(localStorage.getItem("movies"));
+        
+        //loop through all items that are stored locally
+        for (let i = 0; i < movieList.length; i++) {
+            //clear div so an image can be added.
+            $("#"+i).empty();
 
 
+
+            var carouselPosterURL = "https://image.tmdb.org/t/p/w92"+movieList[i].poster;
+            console.log(carouselPosterURL)
+            var carouselIMG = $('<img src='+carouselPosterURL+'>');
+                        //HERE add attribute to the img tag that is the name of the movie. This way we can grab it when the user clicks on it.
+            $("#"+i).append(carouselIMG)
+
+            if (i===5) {
+                break
+            }
+            
+        }
+    }
     
+}
+// ON CLICK FUNCTION HERE for clicking on the carousel picture 
+
+  
     
     /*
         js file structure:
