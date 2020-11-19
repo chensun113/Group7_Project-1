@@ -102,6 +102,7 @@ function nytResults(movieName) {
                 
                 var posterEL = $('<img src='+posterURL+'>');
                 $('#tmdbDisplayTitle').append(posterEL);
+            
             })
     
         }
