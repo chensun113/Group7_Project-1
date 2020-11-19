@@ -175,6 +175,11 @@
     color: gold;
     }
 
+    .slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: gold;
+    }  
+
     .slider {
     width: 50%;
     margin: 100px auto;

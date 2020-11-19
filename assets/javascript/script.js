@@ -91,7 +91,7 @@ function nytResults(movieName) {
             $('#nytDisplayArticle').append(articleURLEL);
 
 
-            var saveBtn = $("<button class='button is-ghost'>").text("Save to favorites");
+            var saveBtn = $("<button id='favoritesButton' class='button is-ghost'>").text("Save to favorites");
             $('#titleSaveToCarousel').append(saveBtn);
 
             $.ajax({
@@ -126,17 +126,35 @@ function nytResults(movieName) {
         }
         else{
             $('#tmdbDisplayTitle').empty();
+<<<<<<< HEAD
             $('#tmdbDisplayTitle').text(movieName+" hasn't yet been reviewed by the NYT, so blame them, the API works fine. Anyway here's a poster (thanks TMDB!) so this space isn't empty:")
+=======
+            $('#tmdbDisplayTitle').text(movieName+" hasn't yet been reviewed by the NYT, so blame them, the API works fine. Anyway heres a poster (thanks TMDB!) so this space isnt empty:")
+>>>>>>> f8032cc7b3311d769a9019669f2dd8ce94991fd2
             $.ajax({
                 url: 'https://api.themoviedb.org/3/search/movie?api_key=a4e5136717cef17c7b2d9c9331196e91&language=en-US&query='+movieName+'&page=1&include_adult=false',
                 method: 'GET'
             }).then(function (responsetmdb) {
+
+                var movieId = responsetmdb.results[0].id;
     
                 var posterURL ="https://image.tmdb.org/t/p/w185" + responsetmdb.results[0].poster_path
                 
                 var posterEL = $('<img src='+posterURL+'>');
                 
                 $('#tmdbDisplayPicture').append(posterEL);
+
+                $.ajax({
+                    url: 'http://api.themoviedb.org/3/movie/'+movieId+'/videos?api_key=a4e5136717cef17c7b2d9c9331196e91',
+                    method: 'GET'
+                }).then(function (trailertmdb) {       
+                                  
+                    var movieTrailer = trailertmdb.results[0].key;
+                                                     
+                    var trailerEl = $('<div id="trailerMovie"><iframe width="560" height="315" src="https://www.youtube.com/embed/'+movieTrailer+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+                    $('#tmdbDisplayTrailer').append(trailerEl);                     
+                 
+                })
 
             })
         }
