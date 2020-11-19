@@ -1,3 +1,6 @@
+var posterGlobal
+var moviePick
+var movieList = []
 function search(movie) {
 
 
@@ -44,6 +47,8 @@ $("#searchButton").on("click", function(event){  //this is the event handler for
 $("#searchResults").on("click","p", function(event){
     //event.preventDefault();
     nytResults($(this).text());
+    moviePick = '';
+    moviePick = $(this).text();
     console.log(event.target);
 })
 
@@ -91,7 +96,7 @@ function nytResults(movieName) {
             $('#nytDisplayArticle').append(articleURLEL);
 
 
-            var saveBtn = $("<button class='button is-ghost'>").text("Save to favorites");
+            var saveBtn = $("<button id='savetocarousel' class='button is-ghost'>").text("Save to favorites");
             $('#titleSaveToCarousel').append(saveBtn);
 
             $.ajax({
@@ -101,10 +106,11 @@ function nytResults(movieName) {
                 
                 //Storing movie id in a variable
                 var movieId = responsetmdb.results[0].id;
-
+                posterGlobal = ''
                 var posterURL ="https://image.tmdb.org/t/p/w185" + responsetmdb.results[0].poster_path;
-                              
+                
                 var posterEL = $('<img id="pictureMovie" src='+posterURL+'>');
+                posterGlobal = responsetmdb.results[0].poster_path
                 $('#tmdbDisplayPicture').append(posterEL);
 
 
@@ -149,6 +155,29 @@ function nytResults(movieName) {
 
 
 } 
+
+$("#titleSaveToCarousel").on("click", function(event){
+    event.preventDefault();
+
+    //create object with poster and movie title
+    movieObj = {
+        poster: posterGlobal,
+        title: moviePick
+    }
+
+    movieList.push(movieObj)
+    //append object to array (from localstorage)
+
+    //then store the entire thing in localstorage
+
+    //need init() function to loop through already saved entries and enter them into the carousel
+
+    localStorage.setItem("movies",JSON.stringify(movieList))
+    
+    // based on movieList.length add poster to carousel
+    
+    
+})
 
 
 
