@@ -122,7 +122,7 @@ function nytResults(movieName) {
                                   
                     var movieTrailer = trailertmdb.results[0].key;
                                                      
-                    var trailerEl = $('<div id="trailerMovie"><iframe width="560" height="315" src="https://www.youtube.com/embed/'+movieTrailer+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+                    var trailerEl = $('<div><iframe id="trailerMovie" width="560" height="315" src="https://www.youtube.com/embed/'+movieTrailer+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
                     $('#tmdbDisplayTrailer').append(trailerEl);                     
                  
                 })
