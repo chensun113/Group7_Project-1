@@ -107,6 +107,9 @@ function nytResults(movieName) {
                 method: 'GET'
             }).then(function (responsetmdb) {
                 
+                var posterEL = $('<img src='+posterURL+'>');
+                // $('#tmdbDisplayTitle').append(posterEL);
+            
                 //Storing movie id in a variable
                 var movieId = responsetmdb.results[0].id;
                 posterGlobal = ''
@@ -128,6 +131,7 @@ function nytResults(movieName) {
                     $('#tmdbDisplayTrailer').append(trailerEl);                     
                  
                 })
+
             })
 
            
@@ -135,7 +139,7 @@ function nytResults(movieName) {
         }
         else{
             $('#tmdbDisplayTitle').empty();
-            $('#tmdbDisplayTitle').text(movieName+" hasn't yet been reviewed by the NYT, so blame them, the API works fine. Anyway heres a poster (thanks TMDB!) so this space isnt empty:")
+            $('#tmdbDisplayTitle').text(movieName+" hasn't yet been reviewed by the NYT, so blame them, the API works fine. Anyway here's a poster (thanks TMDB!) so this space isn't empty:")
             $.ajax({
                 url: 'https://api.themoviedb.org/3/search/movie?api_key=a4e5136717cef17c7b2d9c9331196e91&language=en-US&query='+movieName+'&page=1&include_adult=false',
                 method: 'GET'

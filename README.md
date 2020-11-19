@@ -14,5 +14,5 @@ Once the search has been made, we want a poster of the title to show, a trailer 
 * Recent searches commited to local storage displayed for quick access
 
 ## Project Wireframes
-![Project Homepage](/assets/images/New%20Wireframe_Home.png)
-![Project Results Page](/assets/images/New%20Wireframe_Search_Results.png)
+![Project Homepage](/assets/images/Latest_Wireframe_Homepage.png)
+![Project Results Page](/assets/images/Latest_Wireframe_Search_Results.png)
