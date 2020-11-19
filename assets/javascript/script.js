@@ -14,7 +14,7 @@ $.ajax({
     url: tmdbURL,
     method: 'GET'
 }).then(function (response) {
-    console.log(response)
+    // console.log(response)
     $('#searchResults').empty(); //clear the search results on search 
 
 //this loop will loop through all of the results given to us from TMDB api, each result's title is appendended to the list of search results
@@ -50,7 +50,7 @@ $("#searchResults").on("click","p", function(event){
     nytResults($(this).text());
     moviePick = '';
     moviePick = $(this).text();
-    console.log(event.target);
+    // console.log(event.target);
 })
 
 function nytResults(movieName) {
@@ -63,8 +63,8 @@ function nytResults(movieName) {
         url: askURL,
         method: 'GET'
     }).then(function (response) {  
-        console.log("NYT response is:");
-        console.log(response) ;
+        // console.log("NYT response is:");
+        // console.log(response) ;
 
         //console.log()
 
@@ -147,7 +147,7 @@ function nytResults(movieName) {
     
                 var posterURL ="https://image.tmdb.org/t/p/w185" + responsetmdb.results[0].poster_path
                 
-                var posterEL = $('<img src='+posterURL+'>');
+                var posterEL = $('<img id="pictureMovie" src='+posterURL+'>');
                 
                 $('#tmdbDisplayPicture').append(posterEL);
 
@@ -175,6 +175,8 @@ function nytResults(movieName) {
 
 } 
 
+function init() {
+
 $("#titleSaveToCarousel").on("click", function(event){
     event.preventDefault();
 
@@ -190,38 +192,45 @@ $("#titleSaveToCarousel").on("click", function(event){
     
     // based on movieList.length add poster to carousel
     
+    $('#carousel').empty();
+
+    for (let i = 0; i < movieList.length; i++) {
+
+        // localStorage.getItem("movies") 
+            
+        movieList = JSON.parse(localStorage.getItem("movies"));
+        console.log(movieList)
+        
+        var carouselPosterURL = "https://image.tmdb.org/t/p/w185"+movieList[i][0].poster;
+        var carouselIMG = $('<div><img src='+carouselPosterURL+'></div>');
+        $('#carousel').append(carouselIMG)
+
+        console.log(carouselPosterURL)
+        // console.log(carouselIMG)
+        function sliderInit(){
+        $('.autoplay').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: true,
+            centerMode: true,
+            focusOnSelect: true,
+          });
+        };
+        sliderInit();  
+
+    }   
     
 })
 
 //PLEASE LOOK AT MEEEEEEEEE 
-function init() {
-
-    //please fix this
-    if (localStorage.getItem("movies") != null) {
-            
-        movieList = JSON.parse(localStorage.getItem("movies"));
-        
-        //loop through all items that are stored locally
-        for (let i = 0; i < movieList.length; i++) {
-            //clear div so an image can be added.
-            $("#"+i).empty();
 
 
-
-            var carouselPosterURL = "https://image.tmdb.org/t/p/w92"+movieList[i].poster;
-            console.log(carouselPosterURL)
-            var carouselIMG = $('<img src='+carouselPosterURL+'>');
-                        //HERE add attribute to the img tag that is the name of the movie. This way we can grab it when the user clicks on it.
-            $("#"+i).append(carouselIMG)
-
-            if (i===5) {
-                break
-            }
-            
-        }
-    }
-    
+ 
 }
+
+
 // ON CLICK FUNCTION HERE for clicking on the carousel picture 
 
   
