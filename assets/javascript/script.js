@@ -121,7 +121,7 @@ function nytResults(movieName) {
 
 
                 $.ajax({
-                    url: 'http://api.themoviedb.org/3/movie/'+movieId+'/videos?api_key=a4e5136717cef17c7b2d9c9331196e91',
+                    url: 'https://api.themoviedb.org/3/movie/'+movieId+'/videos?api_key=a4e5136717cef17c7b2d9c9331196e91',
                     method: 'GET'
                 }).then(function (trailertmdb) {       
                                   
@@ -154,7 +154,7 @@ function nytResults(movieName) {
                 $('#tmdbDisplayPicture').append(posterEL);
 
                 $.ajax({
-                    url: 'http://api.themoviedb.org/3/movie/'+movieId+'/videos?api_key=a4e5136717cef17c7b2d9c9331196e91',
+                    url: 'https://api.themoviedb.org/3/movie/'+movieId+'/videos?api_key=a4e5136717cef17c7b2d9c9331196e91',
                     method: 'GET'
                 }).then(function (trailertmdb) {       
                                   
