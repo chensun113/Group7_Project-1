@@ -16,3 +16,6 @@ Once the search has been made, we want a poster of the title to show, a trailer 
 ## Project Wireframes
 ![Project Homepage](/assets/images/Latest_Wireframe_Homepage.png)
 ![Project Results Page](/assets/images/Latest_Wireframe_Search_Results.png)
+
+## Project Live Site Sample:
+![Project Homepage Sample](/assets/images/Working_Project_sample.png)
